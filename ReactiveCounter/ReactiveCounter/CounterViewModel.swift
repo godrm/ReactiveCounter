@@ -15,16 +15,7 @@ protocol PresenterViewModel {
 }
 
 class CounterViewModel : NSObject, PresenterViewModel {
-    class State : ObservableObject {
-        var count : Int {
-            didSet {
-                objectWillChange.send()
-            }
-        }
-        init() {
-            count = 0
-        }
-    }
+    typealias State = CounterState
     
     @IBOutlet weak var counterNumber: UILabel!
     var state : State

@@ -16,9 +16,9 @@ class ViewController: UIViewController {
         buttonViewModel.bind(control: { (control, action) in
             switch action {
             case .plus:
-                self.counterViewModel.state.count += 1
+                self.counterViewModel.state.increase()
             case .minus:
-                self.counterViewModel.state.count -= 1
+                self.counterViewModel.state.decrease()
             }
         })
         counterViewModel.bind(present: { (state) in

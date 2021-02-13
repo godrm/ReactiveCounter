@@ -22,7 +22,7 @@ class ButtonViewModel : NSObject, ControllerViewModel{
     @IBAction func plus(_ sender: UIControl) {
         controllerHandler(sender, Action.plus)
     }
-
+    
     @IBAction func minus(_ sender: UIControl) {
         controllerHandler(sender, Action.minus)
     }
