@@ -6,6 +6,8 @@ Plus 또는 Minus 버튼을 클릭하면 현재 상태값을 기준으로
 ### 특이사항
 
 - ViewModel Object를 스토리보드 TopLevelObject로 등록함
+- CounterViewModel에서 State를 Combine.ObservableObject 로 적용
+    - 값이 바뀐 이후에 통보하도록 `@Published` 대신 didSet에서 objectWillChange.send() 처리 
 
 #### 동작 흐름
 

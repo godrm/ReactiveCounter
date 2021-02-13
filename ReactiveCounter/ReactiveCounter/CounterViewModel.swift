@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 protocol PresenterViewModel {
     associatedtype State
@@ -14,31 +15,29 @@ protocol PresenterViewModel {
 }
 
 class CounterViewModel : NSObject, PresenterViewModel {
-    struct State {
-        var count : Int
-        {
+    class State : ObservableObject {
+        var count : Int {
             didSet {
-                handler(self)
+                objectWillChange.send()
             }
         }
-        private var handler : ViewUpdateClosure
-        init(with handler : @escaping ViewUpdateClosure = { _ in }) {
+        init() {
             count = 0
-            self.handler = handler
         }
     }
     
     @IBOutlet weak var counterNumber: UILabel!
     var state : State
     private var presenterHandler : ViewUpdateClosure
+    private var cancellable : AnyCancellable?
     
     override init() {
         presenterHandler = { (_) in }
         state = State()
         super.init()
-        state = State(with: { (state) in
-            self.presenterHandler(state)
-        })
+        cancellable = state.objectWillChange.sink {
+            self.presenterHandler(self.state)
+        }
     }
     
     func bind(present action: @escaping ViewUpdateClosure) {
