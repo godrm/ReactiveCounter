@@ -12,7 +12,7 @@ Plus 또는 Minus 버튼을 클릭하면 현재 상태값을 기준으로
 
 #### 동작 흐름
 
-![ButtonViewModel](https://github.com/godrm/ReactiveCounter/blob/ViewModel/Images/step3-ButtonViewModel.png?raw=true)
+![ButtonViewModel](https://github.com/godrm/ReactiveCounter/blob/VM%2BCombine%2BAction-step3/Images/step3-ButtonViewModel.png?raw=true)
 
 - Button IBOutlet과 이벤트 연결하고, UIAction을 생성해서 전달하면 버튼과 bind
 
