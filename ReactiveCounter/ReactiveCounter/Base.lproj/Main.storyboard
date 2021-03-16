@@ -20,17 +20,11 @@
                                 <rect key="frame" x="291" y="197" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Plus(+)"/>
-                                <connections>
-                                    <action selector="plus:" destination="N0M-d1-ITa" eventType="touchUpInside" id="bKB-8W-J8I"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bus-p3-HoZ">
                                 <rect key="frame" x="59" y="197" width="59" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Minus(-)"/>
-                                <connections>
-                                    <action selector="minus:" destination="N0M-d1-ITa" eventType="touchUpInside" id="lPb-dC-1dR"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7b-ed-fTh">
                                 <rect key="frame" x="155" y="182" width="92" height="60"/>
@@ -49,7 +43,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="N0M-d1-ITa" customClass="ButtonViewModel" customModule="ReactiveCounter" customModuleProvider="target"/>
+                <customObject id="N0M-d1-ITa" customClass="ButtonViewModel" customModule="ReactiveCounter" customModuleProvider="target">
+                    <connections>
+                        <outlet property="decreaseButton" destination="Bus-p3-HoZ" id="NBT-vr-voT"/>
+                        <outlet property="increaseButton" destination="6BC-gA-3IY" id="nwy-L5-dFi"/>
+                    </connections>
+                </customObject>
                 <customObject id="VXs-6F-LL7" customClass="CounterViewModel" customModule="ReactiveCounter" customModuleProvider="target">
                     <connections>
                         <outlet property="counterNumber" destination="a7b-ed-fTh" id="ypH-6P-r67"/>

@@ -13,14 +13,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonViewModel.bind(control: { (control, action) in
-            switch action {
-            case .plus:
-                self.counterViewModel.state.increase()
-            case .minus:
-                self.counterViewModel.state.decrease()
-            }
-        })
+        buttonViewModel.bind(control: UIAction(handler: { (action) in
+            self.counterViewModel.state.increase()
+        }), for: .plus)
+        
+        buttonViewModel.bind(control: UIAction(handler: { (action) in
+            self.counterViewModel.state.decrease()
+        }), for: .minus)
+        
         counterViewModel.bind(present: { (state) in
             self.counterViewModel.counterNumber.text = "\(state.count)"
         })

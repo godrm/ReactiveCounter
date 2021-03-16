@@ -7,34 +7,25 @@
 
 import UIKit
 
-protocol ControllerViewModel {
-    associatedtype Action
-    typealias ControlActionClosure = (UIControl, Action) -> ()
-    func bind(control action: @escaping ControlActionClosure)
-}
-
-class ButtonViewModel : NSObject, ControllerViewModel{
-    enum Action {
-        case plus
-        case minus
-    }
-
-    @IBAction func plus(_ sender: UIControl) {
-        controllerHandler(sender, Action.plus)
-    }
+class ButtonViewModel : NSObject{
+    @IBOutlet weak var increaseButton: UIButton!
+    @IBOutlet weak var decreaseButton: UIButton!
     
-    @IBAction func minus(_ sender: UIControl) {
-        controllerHandler(sender, Action.minus)
+    enum ActionItem {
+        case minus
+        case plus
     }
-
-    private var controllerHandler : ControlActionClosure
     
     override init() {
-        controllerHandler = { (_, _) in }
         super.init()
     }
     
-    func bind(control action: @escaping ControlActionClosure) {
-        self.controllerHandler = action
+    func bind(control action: UIAction, for item: ActionItem) {
+        switch item {
+        case .minus:
+            decreaseButton.addAction(action, for: .touchUpInside)
+        case .plus:
+            increaseButton.addAction(action, for: .touchUpInside)
+        }
     }
 }
