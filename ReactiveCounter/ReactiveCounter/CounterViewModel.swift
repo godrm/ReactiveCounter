@@ -18,19 +18,19 @@ class CounterViewModel : NSObject, PresenterViewModel {
     typealias State = CounterState
     
     @IBOutlet weak var counterNumber: UILabel!
-    var state : State
+    private(set) var state : State
     private var presenterHandler : ViewUpdateClosure
     private var cancellable : AnyCancellable?
     
     override init() {
         presenterHandler = { (_) in }
-        state = State()
+        self.state = State()
         super.init()
         cancellable = state.objectWillChange.sink {
             self.presenterHandler(self.state)
         }
     }
-    
+        
     func bind(present action: @escaping ViewUpdateClosure) {
         self.presenterHandler = action
     }

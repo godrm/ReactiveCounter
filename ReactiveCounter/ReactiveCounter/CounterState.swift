@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CounterState : ObservableObject {
+class CounterState : ObservableObject, CounterIncreasable, CounterDecreasable {
     private(set) var count : Int {
         didSet {
             objectWillChange.send()
