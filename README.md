@@ -9,7 +9,7 @@ Plus 또는 Minus 버튼을 클릭하면 현재 상태값을 기준으로
 
 #### 동작 흐름
 
-![ControllerViewModel](https://github.com/godrm/ReactiveCounter/blob/ViewModel/Images/ControllerViewModel.png?raw=true)
+![ControllerViewModel](https://github.com/godrm/ReactiveCounter/blob/step0-ViewModel/Images/ControllerViewModel.png?raw=true)
 
 - Button IBAction과 이벤트 연결하고, Action을 전달하는 과정을 ButtonViewModel 에서 처리
 
@@ -26,7 +26,7 @@ buttonViewModel.bind(control: { (control, action) in
 })
 ```
 
-![PresenterViewModel](https://github.com/godrm/ReactiveCounter/blob/ViewModel/Images/PresenterViewModel.png?raw=true)
+![PresenterViewModel](https://github.com/godrm/ReactiveCounter/blob/step0-ViewModel/Images/PresenterViewModel.png?raw=true)
 
 - CountNumber IBOutlet 연결과 값을 표시하는 과정은 CounterViewModel 에서 처리
 
