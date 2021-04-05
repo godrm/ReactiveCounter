@@ -6,24 +6,28 @@
 //
 
 import UIKit
+import Combine
 
 class ViewController: UIViewController {
     @IBOutlet var buttonViewModel: ButtonViewModel!
-    @IBOutlet var counterViewModel: CounterViewModel!
+    @IBOutlet var counterPresenter: CounterPresenter!
     
+    private var state = CounterState()
+    private var cancellable : AnyCancellable?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonViewModel.bind(control: UIAction(handler: { (action) in
-            IncreaseUsecase.action(with: self.counterViewModel.state)
+            IncreaseUsecase.action(with: self.state)
         }), for: .plus)
         
         buttonViewModel.bind(control: UIAction(handler: { (action) in
-            DecreaseUsecase.action(with: self.counterViewModel.state)
+            DecreaseUsecase.action(with: self.state)
         }), for: .minus)
-        
-        counterViewModel.bind(present: { (state) in
-            self.counterViewModel.counterNumber.text = "\(state.count)"
-        })
+
+        cancellable = state.objectWillChange.sink {
+            self.counterPresenter.notifyChanged(with: CounterViewModel(state: self.state))
+        }
     }
 }
 

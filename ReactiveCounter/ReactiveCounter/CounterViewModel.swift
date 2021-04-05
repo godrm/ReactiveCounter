@@ -6,32 +6,30 @@
 //
 
 import UIKit
-import Combine
 
-protocol PresenterViewModel {
+protocol BaseViewModel {
     associatedtype State
-    typealias ViewUpdateClosure = (State) -> ()
-    func bind(present action: @escaping ViewUpdateClosure)
+    var state : State{ get }
 }
 
-class CounterViewModel : NSObject, PresenterViewModel {
+protocol Presentable {
+    func notifyChanged<T:BaseViewModel>(with viewModel: T)
+}
+
+struct CounterViewModel : BaseViewModel {
     typealias State = CounterState
-    
+    let state: State
+}
+
+class CounterPresenter : NSObject, Presentable {
     @IBOutlet weak var counterNumber: UILabel!
-    private(set) var state : State
-    private var presenterHandler : ViewUpdateClosure
-    private var cancellable : AnyCancellable?
     
     override init() {
-        presenterHandler = { (_) in }
-        self.state = State()
         super.init()
-        cancellable = state.objectWillChange.sink {
-            self.presenterHandler(self.state)
-        }
     }
-        
-    func bind(present action: @escaping ViewUpdateClosure) {
-        self.presenterHandler = action
+    
+    func notifyChanged<T:BaseViewModel>(with viewModel: T) {
+        guard let state = viewModel.state as? CounterState else { return }
+        counterNumber.text = "\(state.count)"
     }
 }

@@ -39,7 +39,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonViewModel" destination="N0M-d1-ITa" id="ddc-yJ-hlN"/>
-                        <outlet property="counterViewModel" destination="VXs-6F-LL7" id="85h-m0-Dqo"/>
+                        <outlet property="counterPresenter" destination="VXs-6F-LL7" id="nks-US-yrJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -49,9 +49,9 @@
                         <outlet property="increaseButton" destination="6BC-gA-3IY" id="nwy-L5-dFi"/>
                     </connections>
                 </customObject>
-                <customObject id="VXs-6F-LL7" customClass="CounterViewModel" customModule="ReactiveCounter" customModuleProvider="target">
+                <customObject id="VXs-6F-LL7" customClass="CounterPresenter" customModule="ReactiveCounter" customModuleProvider="target">
                     <connections>
-                        <outlet property="counterNumber" destination="a7b-ed-fTh" id="ypH-6P-r67"/>
+                        <outlet property="counterNumber" destination="a7b-ed-fTh" id="kBs-N7-sfi"/>
                     </connections>
                 </customObject>
             </objects>
