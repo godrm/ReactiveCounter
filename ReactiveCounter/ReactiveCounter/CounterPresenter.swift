@@ -7,18 +7,8 @@
 
 import UIKit
 
-protocol BaseViewModel {
-    associatedtype State
-    var state : State{ get }
-}
-
 protocol Presentable {
     func notifyChanged<T:BaseViewModel>(with viewModel: T)
-}
-
-struct CounterViewModel : BaseViewModel {
-    typealias State = CounterState
-    let state: State
 }
 
 class CounterPresenter : NSObject, Presentable {
