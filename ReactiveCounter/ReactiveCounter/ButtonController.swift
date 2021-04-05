@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ButtonViewModel : NSObject{
+class ButtonController : NSObject{
     @IBOutlet weak var increaseButton: UIButton!
     @IBOutlet weak var decreaseButton: UIButton!
     

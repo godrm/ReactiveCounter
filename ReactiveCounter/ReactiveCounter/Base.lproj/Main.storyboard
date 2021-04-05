@@ -43,7 +43,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="N0M-d1-ITa" customClass="ButtonViewModel" customModule="ReactiveCounter" customModuleProvider="target">
+                <customObject id="N0M-d1-ITa" customClass="ButtonController" customModule="ReactiveCounter" customModuleProvider="target">
                     <connections>
                         <outlet property="decreaseButton" destination="Bus-p3-HoZ" id="NBT-vr-voT"/>
                         <outlet property="increaseButton" destination="6BC-gA-3IY" id="nwy-L5-dFi"/>

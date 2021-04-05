@@ -14,8 +14,8 @@
 		838E248125D7B2760009EE11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838E247F25D7B2760009EE11 /* Main.storyboard */; };
 		838E248325D7B2760009EE11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 838E248225D7B2760009EE11 /* Assets.xcassets */; };
 		838E248625D7B2760009EE11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838E248425D7B2760009EE11 /* LaunchScreen.storyboard */; };
-		838E249025D7B2B60009EE11 /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E248F25D7B2B60009EE11 /* CounterViewModel.swift */; };
-		838E249125D7B2B60009EE11 /* ButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E248E25D7B2B60009EE11 /* ButtonViewModel.swift */; };
+		838E249025D7B2B60009EE11 /* CounterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E248F25D7B2B60009EE11 /* CounterPresenter.swift */; };
+		838E249125D7B2B60009EE11 /* ButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E248E25D7B2B60009EE11 /* ButtonController.swift */; };
 		838E249425D7B3F60009EE11 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 838E249325D7B3F60009EE11 /* README.md */; };
 		83918E2E2600D519001E05AE /* IncreaseUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83918E2D2600D519001E05AE /* IncreaseUsecase.swift */; };
 		83918E312601061B001E05AE /* DecreaseUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83918E302601061B001E05AE /* DecreaseUsecase.swift */; };
@@ -32,8 +32,8 @@
 		838E248225D7B2760009EE11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		838E248525D7B2760009EE11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		838E248725D7B2760009EE11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		838E248E25D7B2B60009EE11 /* ButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModel.swift; sourceTree = "<group>"; };
-		838E248F25D7B2B60009EE11 /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
+		838E248E25D7B2B60009EE11 /* ButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonController.swift; sourceTree = "<group>"; };
+		838E248F25D7B2B60009EE11 /* CounterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterPresenter.swift; sourceTree = "<group>"; };
 		838E249325D7B3F60009EE11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		83918E2D2600D519001E05AE /* IncreaseUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseUsecase.swift; sourceTree = "<group>"; };
 		83918E302601061B001E05AE /* DecreaseUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecreaseUsecase.swift; sourceTree = "<group>"; };
@@ -77,8 +77,8 @@
 				83918E33260107AF001E05AE /* UsecaseActionable.swift */,
 				83918E302601061B001E05AE /* DecreaseUsecase.swift */,
 				83918E2D2600D519001E05AE /* IncreaseUsecase.swift */,
-				838E248E25D7B2B60009EE11 /* ButtonViewModel.swift */,
-				838E248F25D7B2B60009EE11 /* CounterViewModel.swift */,
+				838E248E25D7B2B60009EE11 /* ButtonController.swift */,
+				838E248F25D7B2B60009EE11 /* CounterPresenter.swift */,
 				831B35CF25D811F7005CBC50 /* CounterState.swift */,
 				838E247F25D7B2760009EE11 /* Main.storyboard */,
 				838E248225D7B2760009EE11 /* Assets.xcassets */,
@@ -162,9 +162,9 @@
 				831B35D025D811F7005CBC50 /* CounterState.swift in Sources */,
 				838E247E25D7B2760009EE11 /* ViewController.swift in Sources */,
 				83918E2E2600D519001E05AE /* IncreaseUsecase.swift in Sources */,
-				838E249125D7B2B60009EE11 /* ButtonViewModel.swift in Sources */,
+				838E249125D7B2B60009EE11 /* ButtonController.swift in Sources */,
 				83918E34260107AF001E05AE /* UsecaseActionable.swift in Sources */,
-				838E249025D7B2B60009EE11 /* CounterViewModel.swift in Sources */,
+				838E249025D7B2B60009EE11 /* CounterPresenter.swift in Sources */,
 				83918E312601061B001E05AE /* DecreaseUsecase.swift in Sources */,
 				838E247A25D7B2760009EE11 /* AppDelegate.swift in Sources */,
 				838E247C25D7B2760009EE11 /* SceneDelegate.swift in Sources */,

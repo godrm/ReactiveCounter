@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 class ViewController: UIViewController {
-    @IBOutlet var buttonViewModel: ButtonViewModel!
+    @IBOutlet var buttonViewModel: ButtonController!
     @IBOutlet var counterPresenter: CounterPresenter!
     
     private var state = CounterState()
