@@ -5,21 +5,24 @@
 //  Created by JK on 2021/02/13.
 //
 
-import UIKit
+import Foundation
+import Combine
 
-protocol Presentable {
-    func notifyChanged<T:BaseViewModel>(with viewModel: T)
-}
-
-class CounterPresenter : NSObject, Presentable {
-    @IBOutlet weak var counterNumber: UILabel!
+final class CounterPresenter<State> : NSObject, PresenterViewModel where State : ObservableObject {
+    private(set) var state : State
+    private var presenterHandler : ViewUpdateClosure
+    private var cancellable : AnyCancellable?
     
-    override init() {
+    init(with state: State) {
+        self.state = state
+        self.presenterHandler = { (_) in }
         super.init()
+        cancellable = state.objectWillChange.sink { _ in
+            self.presenterHandler(self.state)
+        }
     }
     
-    func notifyChanged<T:BaseViewModel>(with viewModel: T) {
-        guard let state = viewModel.state as? CounterState else { return }
-        counterNumber.text = "\(state.count)"
+    func bind(present action: @escaping ViewUpdateClosure) {
+        self.presenterHandler = action
     }
 }

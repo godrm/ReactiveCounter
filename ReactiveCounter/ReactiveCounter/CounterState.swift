@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CounterState : ObservableObject, CounterIncreasable, CounterDecreasable {
+final class CounterState : ObservableObject, CounterScenario {
     private(set) var count : Int {
         didSet {
             objectWillChange.send()
@@ -25,4 +25,3 @@ class CounterState : ObservableObject, CounterIncreasable, CounterDecreasable {
         self.count -= 1
     }
 }
-
